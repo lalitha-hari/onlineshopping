@@ -1,0 +1,221 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f4f7f6, #e1e8e3); /* Softer light neutral gradient */
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #34495e; /* Dark grey-blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: linear-gradient(to bottom right, #1abc9c, #16a085); /* Gradient teal */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+header button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to bottom right, #16a085, #1abc9c); /* Slightly reversed gradient */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Products Container */
+#products {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 1300px;
+    box-sizing: border-box;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    width: 280px;
+    max-width: 100%;
+    background: linear-gradient(white, #fafafa); /* Subtle gradient background */
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-card h2 {
+    font-size: 1.3em;
+    color: #34495e; /* Dark grey-blue */
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #7f8c8d; /* Medium grey */
+    margin: 10px 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.product-card button {
+    background: linear-gradient(to bottom right, #2980b9, #3498db); /* Blue gradient */
+    color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-card button:hover {
+    background: linear-gradient(to bottom right, #3498db, #2980b9);
+    transform: scale(1.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Cart Modal */
+#cartModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: auto;
+    transition: opacity 0.3s ease;
+}
+
+#cartModalContent {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 40%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Order Confirmation Modal */
+#orderConfirmationModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ecf0f1; /* Light grey */
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#orderConfirmationModal h2 {
+    color: #2c3e50; /* Dark grey-blue */
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+#orderConfirmationModal button {
+    background-color: #1abc9c; /* Teal */
+    color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#orderConfirmationModal button:hover {
+    background-color: #16a085; /* Darker teal */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    header button {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+
+    #products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        margin-bottom: 30px;
+        width: 90%;
+    }
+
+    #cartModalContent {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    header button {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+
+    .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #cartModalContent {
+        width: 95%;
+    }
+}
